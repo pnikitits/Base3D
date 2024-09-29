@@ -12,6 +12,9 @@ class vec2:
     def __sub__(self, other):
         return vec2(self.x - other.x, self.y - other.y)
     
+    def to_tuple(self):
+        return (self.x, self.y)
+    
     
 class vec3:
     def __init__(self, x: float, y: float, z: float):
@@ -67,6 +70,9 @@ class vec3:
     
     def __str__(self):
         return f"vec3({self.x}, {self.y}, {self.z})"
+    
+    def to_tuple(self):
+        return (self.x, self.y, self.z)
     
 
 class vec4:
@@ -154,3 +160,6 @@ class vec4:
     
     def __str__(self) -> str:
         return f"vec4({self.x}, {self.y}, {self.z}, {self.w})"
+    
+    def to_tuple(self) -> tuple:
+        return (self.x, self.y, self.z, self.w)

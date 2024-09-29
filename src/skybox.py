@@ -1,3 +1,3 @@
 class Skybox:
-    def __init__(self, path: str):
+    def __init__(self, path: str, size: float):
         pass
