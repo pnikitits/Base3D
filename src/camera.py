@@ -17,6 +17,8 @@ class Camera:
         self._camLens.setNear(0.1)
         self._camLens.setFar(100.0)
         
+        self._rot = vec3(self._camera.getH(), self._camera.getP(), self._camera.getR())
+        
         
     @property
     def pos(self):
@@ -35,3 +37,12 @@ class Camera:
     def lookAt(self, value):
         self._lookAt = value
         self._camera.lookAt(value.x, value.y, value.z)
+        
+    @property
+    def rot(self):
+        return self._rot
+    
+    @rot.setter
+    def rot(self, value):
+        self._rot = value
+        self._camera.setHpr(value.x, value.y, value.z)

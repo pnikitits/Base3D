@@ -26,7 +26,7 @@ class Node:
     @pos.setter
     def pos(self, value):
         self._pos = value
-        self.geometry.setPos(value.x, value.y, value.z)
+        self._geometry.setPos(value.x, value.y, value.z)
         
     @property
     def rot(self):
@@ -35,7 +35,7 @@ class Node:
     @rot.setter
     def rot(self, value):
         self._rot = value
-        self.geometry.setHpr(value.x, value.y, value.z)
+        self._geometry.setHpr(value.x, value.y, value.z)
         
     @property
     def scale(self):
@@ -44,4 +44,4 @@ class Node:
     @scale.setter
     def scale(self, value):
         self._scale = value
-        self.geometry.setScale(value.x, value.y, value.z)
+        self._geometry.setScale(value.x, value.y, value.z)
