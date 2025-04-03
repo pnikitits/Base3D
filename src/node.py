@@ -17,6 +17,10 @@ class Node:
         self._rot = rot
         self._scale = scale
         
+        self._geometry.setPos(pos.x, pos.y, pos.z)
+        self._geometry.setHpr(rot.x, rot.y, rot.z)
+        self._geometry.setScale(scale.x, scale.y, scale.z)
+        
         
     
     @property

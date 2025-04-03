@@ -68,12 +68,12 @@ class vec3:
         length = (self.x ** 2 + self.y ** 2 + self.z ** 2) ** 0.5
         return vec3(self.x / length, self.y / length, self.z / length)
     
-    def __str__(self):
-        return f"vec3({self.x}, {self.y}, {self.z})"
-    
     def to_tuple(self):
         return (self.x, self.y, self.z)
     
+    def __repr__(self):
+        dp = 2
+        return f"vec3({round(self.x, dp)}, {round(self.y, dp)}, {round(self.z, dp)})"
 
 class vec4:
     def __init__(self, x: float, y: float, z: float, w: float):
