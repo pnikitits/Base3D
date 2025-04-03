@@ -12,7 +12,8 @@ class label:
                  size: float=0.1,
                  color: vec4=vec4(1, 1, 1, 1),
                  background: vec4=vec4(0, 0, 0, 0),
-                 align: Literal['left', 'center', 'right']='left'):
+                 align: Literal['left', 'center', 'right']='left',
+                 parent=None):
         
         if align == 'left':
             align = TextNode.ALeft
@@ -24,12 +25,15 @@ class label:
         self._text = text
         self._pos = pos
             
-        self._label = OnscreenText(text=text,
-                                  pos=(pos.x, pos.y),
-                                  scale=size,
-                                  fg=color.to_tuple(),
-                                  bg=background.to_tuple(),
-                                  align=align)
+        self._label = OnscreenText(
+            text=text,
+            pos=(pos.x, pos.y),
+            scale=size,
+            fg=color.to_tuple(),
+            bg=background.to_tuple(),
+            align=align,
+            parent=parent
+        )
         
     @property
     def pos(self):
@@ -48,3 +52,9 @@ class label:
     def text(self, value: str):
         self._text = value
         self._label.setText(value)
+        
+    def hide(self):
+        self._label.hide()
+        
+    def show(self):
+        self._label.show()
