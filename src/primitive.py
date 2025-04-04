@@ -171,7 +171,7 @@ def torus(radius: float, thickness: float, pos: vec3):
     pass
 
 def plane(app):
-    path = "/Users/pierrenikitits/Documents/GitHub/Base3D/assets/models/plane.obj"
+    path = "../assets/models/plane.obj"
     plane = app.loader.loadModel(path)
     return plane
 

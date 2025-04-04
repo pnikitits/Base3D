@@ -6,6 +6,18 @@ from panda3d.core import TextureStage
 
 class Skybox:
     def __init__(self, app, path: str, size: float):
+        """
+        Create a skybox with 6 planes
+        
+        Parameters
+        ----------
+        app : App
+            The app instance.
+        path : str
+            The path to the skybox textures. (must contain 6 images named top.png, bottom.png, right.png, left.png, front.png, back.png)
+        size : float
+            The size of the skybox.
+        """
         
         names = [
             'top',
